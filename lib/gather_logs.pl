@@ -226,7 +226,7 @@ sub get_cc_log{
 	timed_run("scp -o StrictHostKeyChecking=no root\@$my_cc_ip:$ENV{'EUCALYPTUS'}/var/log/eucalyptus/axis2c.log " . $log_dir . $my_cc_ip . "_CC" . $group . "/", 60);
 	check_timed_run("axis2c.log from $cc_ip");
 
-	get_sys_log_files($this_ip, $log_dir . $this_ip . "_CC/");
+	get_sys_log_files($this_ip, $log_dir . $this_ip . "_CC" . $group );
 
 	return 0;
 
@@ -312,7 +312,7 @@ sub get_nc_log{
 	timed_run("scp -o StrictHostKeyChecking=no root\@$my_nc_ip:$ENV{'EUCALYPTUS'}/var/log/eucalyptus/axis2c.log " . $log_dir . $my_nc_ip . "_NC" . $group  . "/", 60);
 	check_timed_run("axis2c.log from $my_nc_ip");
 
-	get_sys_log_files($this_ip, $log_dir . $this_ip . "_NC/");
+	get_sys_log_files($this_ip, $log_dir . $this_ip . "_NC" . $group );
 
 	return 0;
 };
@@ -353,9 +353,9 @@ sub get_sc_log{
                 print "\n";
         };
 
-	get_hprof_file($this_ip, $log_dir . $this_ip . "_SC/");
+	get_hprof_file($this_ip, $log_dir . $this_ip . "_SC" . $group );
 
-	get_sys_log_files($this_ip, $log_dir . $this_ip . "_SC/");
+	get_sys_log_files($this_ip, $log_dir . $this_ip . "_SC" . $group );
 
 	return 0;
 };
