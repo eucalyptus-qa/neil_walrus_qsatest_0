@@ -85,6 +85,7 @@ begin
     object_name = 'test_object_%s' % generate_string(10)
     object = put_object(bucket, object_name)
     url = make_url('GET', bucket_name, object_name, s3_url, access_key, secret_key)
+    puts "Using URL = " + url + "\n"
     uri = URI.parse(url)
     begin
         data = Net::HTTP.get(uri)
