@@ -1,3 +1,20 @@
+neil_walrus_qsatest_0
+=====================
+
+## Description
+
+Test that an object on Walrus can be retreived via HTTP request
+
+## Procedure
+
+1. Create bucket
+2. Put object
+3. Pull object using Http library
+4. [FAIL] Received 403 error
+5. Delete object
+6. Delete bucket
+
+
 # Eucalyptus Testunit Framework
 
 Eucalyptus Testunit Framework is designed to run a list of test scripts written by Eucalyptus developers.
